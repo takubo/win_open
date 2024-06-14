@@ -4,6 +4,9 @@ if [ $# -eq 0 ] ; then
     # 引数が指定されていないときは、
     # カレントディレクトリを開く。
     set "."
+else
+    path="${1//\//\\}"
+    shift
 fi
 
-explorer "$@"
+explorer "${path}" "$@"
